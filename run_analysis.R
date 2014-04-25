@@ -74,5 +74,8 @@ har_melted <- melt(har, id.vars=c("subject_id","activity_name"))
 har_reshaped <- dcast(har_melted, formula= subject_id + activity_name ~ variable, mean)
 
 # Uncomment the following to write and/or read the tidy data set to/from disk.
+# write.table(har_reshaped, "har_tidy.txt", row.names=FALSE)
+# har_tidy <- read.table("har_tidy.txt", header=TRUE, check.names=FALSE)
+# or
 # write.csv(har_reshaped, "har_tidy.csv", row.names=FALSE)
 # har_tidy <- read.csv("har_tidy.csv", header=TRUE, check.names=FALSE)
